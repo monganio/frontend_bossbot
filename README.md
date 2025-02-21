@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 BOSSBOT - just job เรื่อง jib jib
 
-## Getting Started
 
-First, run the development server:
+## Overview
+BOSSBOT เป็นเว็บแอป AI Chatbot ที่ช่วยแนะนำงานที่เหมาะกับคุณผ่านเทคโนโลยี **RAG (Retrieval-Augmented Generation)** เพื่อให้บอทสามารถตอบคำถามจากฐานข้อมูลที่กำหนด โดยใช้ **Next.js (Frontend)** และ **FastAPI + WebSocket (Backend)** พร้อม **ChromaDB** สำหรับการจัดเก็บข้อมูลแบบเวกเตอร์
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Workflow
+1️⃣ Frontend → รับข้อความ → ส่งไป WebSocket
+2️⃣ Backend → รับข้อความ → ค้นหาข้อมูลจาก VectorDB → ใช้ LLM ตอบกลับ
+3️⃣ Frontend แสดงผล → รับข้อความจาก WebSocket → แสดงคำตอบ
+4️⃣ Deployment → Frontend ไป Firebase Hosting , Backend ไป Hugging Face
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## **Frontend**
+- **Next.js** + **React.js** (UI Framework)
+- **TailwindCSS** (Styling)
+- **WebSocket** (Real-time communication)
+- **Firebase Hosting** (Deployment)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## **Backend**
+- **FastAPI** (API Framework)
+- **WebSocket** (Real-time communication)
+- **LLM (Large Language Model)** (AI Chatbot)
+- **ChromaDB** (Vector Database for Retrieval)
+- **Hugging Face Spaces** (Deployment)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**คลิกที่นี่เพื่อดูการทำงานของ Backend**: 
+[Backend BossBot by Absalomlor](https://github.com/Absalomlor/backend_bossbot)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Usage
+1️⃣ เปิดเว็บ `https://bossbot-bu.web.app/`
+2️⃣ พิมพ์ข้อความและกดส่ง
+3️⃣ รอให้บอทค้นหาข้อมูลจาก Vector Database และตอบกลับ
+4️⃣ หากต้องการล้างแชท กดปุ่ม 🗑️ ล้างแชท
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributors
+- **Supharat Sukpong** - [Monganio GitHub Profile](https://github.com/monganio)
+- **Krasirit Pairotamonchai** - [Absalomlor GitHub Profile](https://github.com/Absalomlor)
